@@ -1,0 +1,12 @@
+#brand-logo {
+    font-size: 34px;
+}
+
+#app-navbar {
+    background: linear-gradient(120deg, #f90ce5, #eb5f5a);
+    display: flex;
+}
+
+body {
+    background: #eee;
+}
