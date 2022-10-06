@@ -1,10 +1,10 @@
 import React from "react";
 
-function BooKDetails(){
+function BookList(){
     return(
         <div>
 
         </div>
     )
 }
-export default BooKDetails;
+export default BookList;
