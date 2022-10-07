@@ -3,12 +3,25 @@
 }
 
 .btn:hover {
-    color: #fff;
+    color: #e346f8;
+}
+.search{
+    display: flex;
+    margin: 20px 400px;
+}
+.btn{
+    background: #e346f8;
+    color: white;
+}
+img{
+    width: 200px;
+    height: 300px;
+}
+img:hover{
+    transform: scale(1.1);
 }
 
 .input-text:focus {
-
-
     box-shadow: 0px 0px 0px;
     border-color: #e346f8;
     outline: 0px;
@@ -16,4 +29,8 @@
 
 input {
     border: 1px solid #e346f8;
+}
+.book{
+    align-items: center;
+    justify-content: center;
 }
