@@ -3,10 +3,12 @@ import Api, { Api_Url } from "../Global/Api";
 import "./Home.css"
 
 function Home(){
-      const [books, setBooks] = useState([])
-
+      const [books, setBooks] = useState([]);
+      const [searchTerm, setSearchTerm] =useState('');
+      const onInputChange= (e) =>{
+        setSearchTerm(e.target.value);
+      }  
     useEffect(()=>{
-        // e.PreventDefault()
         fetch(Api_Url)
         .then((responce)=>responce.json())
         .then((data)=>setBooks(data))
@@ -25,12 +27,18 @@ function Home(){
         gridTemplateRows: "auto",
         gridGap: "20px",
     };
+    
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        setBooks()
+    }
+
 
     return(
         <div className="container">
-            <div className="search">
-                <input type="text" placeholder="Search books...." />
-                <div className="btn"><button className="btn btn-outline-warning btn-lg" type="button"><i className="fa fa-search"></i></button></div>        
+            <div className="search" onSubmit={handleSubmit}>
+                <input type="text" placeholder="Search books...." value={searchTerm} onChange={onInputChange} />
+                <div className="btn"><button type="button"><i className="fa fa-search"></i>Search</button></div>        
             </div>   
             <div className="booklist" style={arrange}>
                 {books.map((book) =>(
