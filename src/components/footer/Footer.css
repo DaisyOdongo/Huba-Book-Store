@@ -10,6 +10,8 @@ footer {
     bottom: 0;
     color: #fff;
     display: flex;
+    max-height: 10vh;
+    
 }
 
 .footer h3 {
