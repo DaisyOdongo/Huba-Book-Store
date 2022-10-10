@@ -6,17 +6,19 @@ function BooKDetails(){
     const {id} =useParams
     console.log(id)
 
-    const [bookDetails, getBookDetails] =useState([])
+    const [books, getBooks] =useState([]);
+
     const book ={}
 
     useEffect(() =>{
         fetch(Api_Url)
         .then((responce)=>responce.json())
-        .then((bookDetails)=>console.log(bookDetails))
+        .then((books)=>console.log(books))
         .catch((error) =>console.log(error));
-    },[])
+    },[id])
+    getBooks();
 
-    console.log(bookDetails)
+    console.log(books)
     
     return(
         <div>
