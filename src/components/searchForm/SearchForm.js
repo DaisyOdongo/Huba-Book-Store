@@ -1,35 +1,38 @@
-import React, {useRef, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
-import {useGlobalContext} from '../context/Context'
+// import React, {useState, useEffect} from "react";
+// import {Api_Url} from './Global/Api';
+// import {useParams } from "react-router-dom";
 
-function SearchForm(){
+// function SearchForm(){
 
-    const [setResultTitle, setSearchTerm] =useGlobalContext();
-    const searchText = useRef('');
-    const navigate = useNavigate();
+//     const [books, setBooks] = useState();
+//     const [filteredBooks, setFilteredBooks] = useState([]);
+//     const {id} =useParams
+    
 
-    useEffect(() => searchText.current.focus(), []);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let tempSearchTerm = searchText.current.value.trim();
-    if((tempSearchTerm.replace(/[^\w\s]/gi,"")).length === 0){
-      setSearchTerm("the lost world");
-      setResultTitle("Search book ...");
-    } else {
-      setSearchTerm(searchText.current.value);
-    }
+//      useEffect(()=>{
+//         fetch(`Api_Url`, id)
+//         .then((responce)=>responce.json())
+//         .then((response)=>setBooks(response.hints))
+//         .catch((error) =>console.log(error));
+//     },[id]);
 
-    navigate("/book");
-  };
+//     function handleOnChange(search){
+//      setFilteredBooks(search.key)
+//     }
 
-    return(
-        <div className="search">
-            <form onSubmit={handleSubmit}>
-                 <input type="text" placeholder="Search books...." />
-                <div className="btn"><button type="button"><i className="fa fa-search" onClick={handleSubmit}></i>Search</button></div>       
-            </form>
+//     function handleClick(event){
+//         event.preventDefault();
+//         setFilteredBooks(filteredBooks)
+//     }
+
+//     return(
+//         <div className="search">
+//             <form onSubmit={handleClick}>
+//                  <input type="text" placeholder="Search books...." />
+//                 <div className="btn"><button type="button"><i className="fa fa-search" onChange={handleOnChange}></i>Search</button></div>       
+//             </form>
                
-            </div> 
-    )
-}
-export default SearchForm;
+//             </div> 
+//     )
+// }
+// export default SearchForm;
