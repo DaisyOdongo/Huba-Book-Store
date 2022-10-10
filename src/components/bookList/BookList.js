@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from "react";
-import { useAppContext } from "../context/AppContext";
-import Home from "../home/Home";
-import Api, { Api_Url } from "../Global/Api";
-import "./Home.css"
+import { Api_Url } from "../Global/Api";
+import "./BookList.css"
 
 function BookList(){
   const [books, setBooks] = useState([]);
-  const {favourites, addToFavourites, removeFromFavourites} =useAppContext();
+
     
       useEffect(()=>{
         fetch(Api_Url)
